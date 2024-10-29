@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
+use App\Models\Conta;
+use App\Policies\ContaPolicy;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+
     /**
      * Register any application services.
      */

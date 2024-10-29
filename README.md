@@ -52,6 +52,20 @@ php artisan migration
 ```
 4. Edite o arquivo `.env` para preencher as informações necessárias de conexão com o banco de dados e outras variáveis de ambiente.
 
+## Executando Testes no Projeto
+
+O projeto está configurado para utilizar um banco de dados em memória durante a execução de testes unitários ou de funcionalidade. Siga os passos abaixo para rodar os testes:
+
+1. Realize as migrações para o banco de dados de teste:
+```
+php artisan migrate --env=testing
+```
+
+2. Execute os testes:
+```
+php artisan test
+```
+
 ## Tecnologias Usadas
 
 ###

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Models\Contas;
+use App\Models\Conta;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -36,14 +36,16 @@ class ContaTest extends TestCase
         $response = $this->post('/conta', $data);
 
         $this->assertDatabaseHas('contas', $data);
-        $response->assertStatus(201);
+
+        $response->assertRedirect(route('user-bills')); // Se o usuário foi redirecionado para essa rota significa que o código passou
+
     }
 
     // Teste de Edição de Bill
     public function test_usuario_pode_editar_sua_conta()
     {
         $user = User::factory()->create();
-        $conta = Contas::factory()->create(['user_id' => $user->id]);
+        $conta = Conta::factory()->create(['user_id' => $user->id]);
 
         $this->actingAs($user);
 
@@ -55,10 +57,12 @@ class ContaTest extends TestCase
             'status' => 'pago',
         ];
 
-        $response = $this->put("/contas/{$conta->id}", $updatedData);
+        $response = $this->put("/conta/{$conta->id}", $updatedData);
 
-        $this->assertDatabaseHas('contas', $updatedData);
-        $response->assertStatus(200);
+        $this->assertDatabaseHas('contas', array_merge($updatedData, ['id' => $conta->id]));
+
+        $response->assertRedirect(route('user-bills'));
+        
     }
 
     // Teste de Autenticação para Criação
@@ -72,7 +76,7 @@ class ContaTest extends TestCase
             'status' => 'pendente',
         ];
 
-        $response = $this->post('/contas', $data); // Tentativa de criação sem autenticação
+        $response = $this->post('/conta', $data); // Tentativa de criação sem autenticação
 
         // Verifica se o acesso é negado
         $response->assertRedirect('/login'); // Redireciona para login
@@ -85,7 +89,7 @@ class ContaTest extends TestCase
         $user1 = User::factory()->create();
         $user2 = User::factory()->create();
 
-        $conta = Contas::factory()->create(['user_id' => $user1->id]);
+        $conta = Conta::factory()->create(['user_id' => $user1->id]);
 
         $this->actingAs($user2);
 
@@ -95,7 +99,7 @@ class ContaTest extends TestCase
             'valor' => 500,
         ];
 
-        $response = $this->put("/contas/{$conta->id}", $updatedData);
+        $response = $this->put("/conta/{$conta->id}", $updatedData);
 
         $this->assertDatabaseMissing('contas', $updatedData);
         $response->assertStatus(403);
