@@ -6,7 +6,7 @@
 
 ###
 
-<p align="left">Desenvolver uma aplicação web para controle de contas a pagar e receber usando o framework<br>Laravel. O sistema deve incluir autenticação de usuários, níveis de acesso, testes unitários,<br>segurança básica e uma documentação simples.</p>
+Desenvolver uma aplicação web para controle de contas a pagar e receber usando o framework Laravel. O sistema deve incluir autenticação de usuários, níveis de acesso, testes unitários, segurança básica e uma documentação simples.
 
 ###
 
@@ -14,10 +14,11 @@
 
 ###
 
-- PHP 8.3
-- Laravel 11.29.0
-- Composer 2.7.2
-- MySQL 8.0.37
+- **PHP** v8.3
+- **Laravel** v11.29.0
+- **Composer** v2.7.2
+- **MySQL** v8.0.37
+- **Node.js** v20.14.0
 
 ###
 
@@ -25,14 +26,31 @@
 
 ###
 
-- Após a clonagem do repositório execute os seguintes comandos no terminal
+1. Clone o Repositório para sua máquina
+2. Execute os seguintes comandos no terminal para instalar as dependências:
 
 ```
 composer update
-php artisan migration
+```
+Se você possui múltiplas versões do Composer instaladas, pode ser necessário utilizar o comando `composer2 update`.
+```
+npm install
 ```
 
-Caso você tenha mais de uma versão do PHP instalada, pode ser necessário usar o comando `composer2 update` para executar a instalação das dependências.
+## Configuração do Laravel
+1. Crie o arquivo de ambiente com o seguinte comando:
+```
+cp .env.example .env
+```
+2. Gere a chave da aplicação
+```
+php artisan key:generate
+```
+3. Configure as tabelas do banco de dados com o comando:
+```
+php artisan migration
+```
+4. Edite o arquivo `.env` para preencher as informações necessárias de conexão com o banco de dados e outras variáveis de ambiente.
 
 ## Tecnologias Usadas
 
@@ -53,3 +71,6 @@ Caso você tenha mais de uma versão do PHP instalada, pode ser necessário usar
 </div>
 
 ###
+
+## Licença
+Este projeto é licenciado sob a MIT License. Consulte o arquivo LICENSE para obter mais detalhes.
