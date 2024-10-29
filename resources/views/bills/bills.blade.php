@@ -20,10 +20,10 @@
 
     <!-- Bills -->
     @if ($contas->isNotEmpty())
-        <div class="relative max-w-7xl mx-auto sm:px-6 lg:px-8 py-12">
+        <div class="relative max-w-7xl mx-auto sm:px-6 lg:px-8 py-12 overflow-x-scroll">
 
             <table
-                class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 overflow-hidden shadow-sm sm:rounded-lg">
+                class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 shadow-sm sm:rounded-lg">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3 text-center">
