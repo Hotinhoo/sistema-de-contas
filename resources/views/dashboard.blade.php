@@ -28,28 +28,28 @@
 
                 <div class="bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
 
-                    <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">0</h5>
+                    <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">{{ 0 + $contasPagas }}</h5>
                     <p class="text-base font-normal text-gray-500 dark:text-gray-400">{{ __('Paid') }}</p>
 
                 </div>
 
                 <div class="bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
 
-                    <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">0</h5>
+                    <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">{{ 0 + $contasPendentes }}</h5>
                     <p class="text-base font-normal text-gray-500 dark:text-gray-400">{{ __('Pending') }}</p>
                     
                 </div>
 
                 <div class="bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
 
-                    <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">0</h5>
+                    <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">{{ 0 + $contasExpiradas }}</h5>
                     <p class="text-base font-normal text-gray-500 dark:text-gray-400">{{ __('Expired') }}</p>
                     
                 </div>
 
                 <div class="bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
 
-                    <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">0</h5>
+                    <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">{{ 0 + $contasExpiracaoProxima }}</h5>
                     <p class="text-base font-normal text-gray-500 dark:text-gray-400">{{ __('Near Expiration') }}</p>
                     
                 </div>

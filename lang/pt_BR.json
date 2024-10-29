@@ -35,5 +35,13 @@
     "Near Expiration": "Expiração Próxima",
     "Paid": "Pagas",
     "Pending": "Pendentes",
-    "Expired": "Expiradas"
+    "Expired": "Expiradas",
+    "Details: ": "Detalhes: ",
+    "Bill details": "Detalhes da Conta",
+    "Update your bill information.": "Atualize as informações da sua conta",
+    "Description": "Descrição",
+    "Delete Bill": "Excluir essa Conta",
+    "Delete this bill from your account": "Excluir essa conta do seu perfil",
+    "Create Bill": "Criar Conta",
+    "All Bills" : "Todas as Contas"
 }

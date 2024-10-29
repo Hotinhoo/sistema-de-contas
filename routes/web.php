@@ -2,16 +2,25 @@
 
 use App\Http\Controllers\ContasController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    
+    if(Auth::user()){
+        return redirect('/dashboard');
+    }else{
+        return redirect('/login');
+    }
+
 });
 
 Route::middleware(['auth', 'verified'])->group(function () { // Criação de grupo dentro do middleware
 
-    Route::view('/dashboard', 'dashboard')->name('dashboard');
-    Route::view('/bills', 'bills')->name('user-bills');
+    Route::get('/dashboard', [ContasController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('/bills', [ContasController::class, 'index'])->name('user-bills');
+    Route::get('/all-bills', [ContasController::class, 'allBills'])->name('all-bills');
     Route::get('/bill/{conta}', [ContasController::class, 'show'])->name('bill-details');
 
 });

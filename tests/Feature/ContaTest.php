@@ -61,7 +61,7 @@ class ContaTest extends TestCase
 
         $this->assertDatabaseHas('contas', array_merge($updatedData, ['id' => $conta->id]));
 
-        $response->assertRedirect(route('user-bills'));
+        $response->assertRedirect(route('bill-details', ['conta' => $conta->id]));
         
     }
 
