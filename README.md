@@ -46,11 +46,11 @@ cp .env.example .env
 ```
 php artisan key:generate
 ```
-3. Configure as tabelas do banco de dados com o comando:
+3. Edite o arquivo `.env` para preencher as informações necessárias de conexão com o banco de dados e outras variáveis de ambiente.
+4. Configure as tabelas do banco de dados com o comando:
 ```
-php artisan migration
+php artisan migrate
 ```
-4. Edite o arquivo `.env` para preencher as informações necessárias de conexão com o banco de dados e outras variáveis de ambiente.
 
 ## Iniciando Ambiente de Desenvolvimento
 
@@ -60,7 +60,7 @@ php artisan serve
 ```
 Esse comando iniciará o servidor de desenvolvimento do Laravel, tornando a aplicação acessível em `http://localhost:8000` por padrão.
 
-2. Em seguida, inicie o Vite para compilar e monitorar os assets frontend com o comando:
+2. Em seguida, em outro terminal, inicie o Vite para compilar e monitorar os assets frontend com o comando:
 ```
 npm run dev
 ```
