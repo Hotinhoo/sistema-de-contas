@@ -10,9 +10,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () { // Criação de grupo dentro do middleware
 
     Route::view('/dashboard', 'dashboard')->name('dashboard');
-    Route::get('/bills', function () {
-        return "Chamar Controller com as contas do usuário";
-    })->name('user-bills');
+    Route::view('/bills', 'bills')->name('user-bills');
 
 });
 
