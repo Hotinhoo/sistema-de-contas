@@ -1,16 +1,16 @@
-# Sistema de Contas
+# Accounts System
 
 ###
 
-## Objetivo
+## Objective
 
 ###
 
-Desenvolver uma aplicação web para controle de contas a pagar e receber usando o framework Laravel. O sistema deve incluir autenticação de usuários, níveis de acesso, testes unitários, segurança básica e uma documentação simples.
+Develop a web application for managing accounts payable and receivable using the Laravel framework. The system must include user authentication, access levels, unit testing, basic security, and simple documentation.
 
 ###
 
-## Requisitos do Ambiente
+## Environment Requirements
 
 ###
 
@@ -22,93 +22,93 @@ Desenvolver uma aplicação web para controle de contas a pagar e receber usando
 
 ###
 
-## Instalação
+## Installation
 
 ###
 
-1. Clone o Repositório para sua máquina
-2. Execute os seguintes comandos no terminal para instalar as dependências:
+1. Clone the repository to your machine.
+2. Run the following commands in the terminal to install dependencies:
 
 ```
 composer update
 ```
-Se você possui múltiplas versões do Composer instaladas, pode ser necessário utilizar o comando `composer2 update`.
+If you have multiple versions of Composer installed, you may need to use the `composer2 update` command.
 ```
 npm install
 ```
 
-## Configuração do Laravel
-1. Crie o arquivo de ambiente com o seguinte comando:
+## Laravel Setup
+1. Create the environment file with the following command:
 ```
 cp .env.example .env
 ```
-2. Gere a chave da aplicação
+2. Generate the application key:
 ```
 php artisan key:generate
 ```
-3. Edite o arquivo `.env` para preencher as informações necessárias de conexão com o banco de dados e outras variáveis de ambiente.
-4. Configure as tabelas do banco de dados com o comando:
+3. Edit the `.env` file to fill in the necessary database connection information and other environment variables.
+4. Set up the database tables with the command:
 ```
 php artisan migrate
 ```
 
-## Iniciando Ambiente de Desenvolvimento
+## Starting Development Environment
 
-1. Inicie o servidor Laravel com o comando:
+1. Start the Laravel server with the command:
 ```
 php artisan serve
 ```
-Esse comando iniciará o servidor de desenvolvimento do Laravel, tornando a aplicação acessível em `http://localhost:8000` por padrão.
+This command will start Laravel's development server, making the application accessible at `http://localhost:8000` by default.
 
-2. Em seguida, em outro terminal, inicie o Vite para compilar e monitorar os assets frontend com o comando:
+2. Then, in another terminal, start Vite to compile and watch frontend assets with the command:
 ```
 npm run dev
 ```
-Esse comando compilará automaticamente os arquivos CSS e JavaScript, além de executar o Tailwind CSS para aplicar e atualizar os estilos em tempo real sempre quhouver alterações.
+This command will automatically compile CSS and JavaScript files and run Tailwind CSS to apply and update styles in real-time whenever changes are made.
 
-## Executando Testes no Projeto
+## Running Project Tests
 
-O projeto está configurado para utilizar um banco de dados em memória durante a execução de testes unitários ou de funcionalidade. Siga os passos abaixo para rodar os testes:
+The project is set up to use an in-memory database for unit or functional testing. Follow these steps to run the tests:
 
-1. Realize as migrações para o banco de dados de teste:
+1. Migrate to the test database:
 ```
 php artisan migrate --env=testing
 ```
 
-2. Execute os testes:
+2. Run the tests:
 ```
 php artisan test
 ```
 
-## Detalhes do Funcionamento
+## Functional Details
 
-Conforme solicitado, utilizei as funções do **Laravel Breeze** para gerenciar todas as requisições da aplicação.
+As requested, I used **Laravel Breeze** functions to handle all application requests.
 
-A plataforma foi originalmente desenvolvida em inglês, mas configurei todas as traduções para o português, com exceção dos callbacks. Não incluí botões para alternância de idioma ou de tema, pois esses itens não foram especificados como requisitos do projeto.
+The platform was originally developed in English, but I configured all translations to Portuguese, except for callbacks. I did not include buttons for language or theme switching, as these items were not specified as project requirements.
 
-### Rotas de Visualização de Contas
-As rotas de visualização e detalhamento das contas são:
-- `user-bills` - Exibição das contas do usuário
-- `bill-details` - Exibição dos detalhes de uma conta específica e formulário de edição
+### Account Viewing Routes
+The routes for viewing and detailing accounts are:
+- `user-bills` - Displays the user's accounts
+- `bill-details` - Shows details of a specific account and edit form
 
-### Rotas de Gerenciamento de Contas
-As rotas para gerenciamento de contas incluem:
-- `store-bill` - Adicionar nova conta
-- `update-bill` - Atualizar conta existente
-- `delete-bill` - Excluir conta
+### Account Management Routes
+The routes for account management include:
+- `store-bill` - Add a new account
+- `update-bill` - Update an existing account
+- `delete-bill` - Delete an account
 
-### Acesso Administrativo
-Há uma rota exclusiva para administradores visualizarem todas as contas, chamada `all-bills`. O controle de acesso e permissões foi implementado utilizando Policies, permitindo que apenas administradores acessem essa funcionalidade.
+### Administrative Access
+There is an exclusive route for administrators to view all accounts, called `all-bills`. Access control and permissions were implemented using Policies, allowing only administrators to access this feature.
 
-Embora não tenha sido um requisito, deixei a possibilidade para que administradores também possam gerenciar as contas dos usuários.
+Although it was not a requirement, I left the possibility for administrators to also manage user accounts.
 
-### Estrutura de Controllers
-Considerando a simplicidade do projeto, utilizei um único controller, o `ContasController`, para gerenciar todas as operações de contas. Esse controller centraliza o processamento de todas as demandas, simplificando a estrutura da aplicação.
+### Controller Structure
+Given the simplicity of the project, I used a single controller, `ContasController`, to manage all account operations. This controller centralizes the processing of all requests, simplifying the application structure.
 
-### Considerações
-Embora este seja um projeto básico, existem várias oportunidades de aprimoramento. Acredito, no entanto, que os principais requisitos do teste foram atendidos com essa implementação.
+### Considerations
+Although this is a basic project, there are several opportunities for improvement. However, I believe the main requirements of the test were met with this implementation.
 
-## Tecnologias Usadas
+## Technologies Used
 
 ###
 
@@ -128,5 +128,5 @@ Embora este seja um projeto básico, existem várias oportunidades de aprimorame
 
 ###
 
-## Licença
-Este projeto é licenciado sob a MIT License. Consulte o arquivo LICENSE para obter mais detalhes.
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
